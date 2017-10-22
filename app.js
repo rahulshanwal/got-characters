@@ -8,7 +8,7 @@ LocalStrategy = require("passport-local"),
 User = require("./models/user"),
 routes = require("./routes/router");
 
-mongoose.connect("mongodb://localhost/practice", {useMongoClient: true}),
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
