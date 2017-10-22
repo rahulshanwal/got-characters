@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+<div class="container members">
+    <header>
+        <div class="jumbotron transparent_6 member-message">
+          <h3 class="display-6">Characters</h3>
+          <p class="lead">Get to know more about a character</p>
+          <hr class="my-4">
+          <p class="lead">
+            <a class="btn btn-primary" href="/members/new" role="button">Register a member</a>
+          </p>
+        </div>
+    </header>
+    <% var len = members.length %>
+    <% for(var i = 0; i< len; i++){ %>
+    <% var member = members[i] %>
+        <div class="row thumbnail member-row">
+            <div class="col-sm-3">
+                <img class="col" src="<%= member.image %>">
+            </div>
+             <div class="col-sm-9">
+                <div class="row">
+                    <h3 class="member-name"><a href="members/<%= member._id %>"><%= member.name %></a></h3> <h5 class="col"><em style="float: right"><%= member.dialog%></em></h5>
+                </div>
+                <div class="row caption">
+                    <%= member.description %>
+                </div>
+                <% if(currentUser){ %>
+                    <div class="row">
+                        <a href="/members/<%= member._id%>/edit"><em>Edit info</em></a>
+                    </div>
+                <% } %>
+             </div>
+        </div>
+    <% } %>
+</div>
+
+
+<% include ../partials/footer %>

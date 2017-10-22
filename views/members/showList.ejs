@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+<div class="container new-member">
+    <form method="post" action="/houses/<%=houseId%>?_method=put">
+        <ul class="list-group">
+            <% var len = members.length %>
+            <% for(var i = 0; i< len; i++){ %>
+            <% var member = members[i] %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h5><%= member.name %></h5>
+                    <input type="checkbox" name="house[members]" value="<%= member.id %>">
+                </li>
+            <% } %>
+        </ul>
+        <button class="btn btn-success" type="submit">Add</button>
+    </form>
+</div>
+<% include ../partials/footer %>

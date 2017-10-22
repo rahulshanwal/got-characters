@@ -1,0 +1,71 @@
+.wall-background{
+    background-image: url(http://www.wallpapermade.com/images/wallpapers/originals/the-wall-game-of-thrones-wallpaper-6325.jpg);
+    background-size: cover;
+}
+
+/*Generic classes*/
+.transparent_6 {
+    opacity: 0.6;
+}
+
+h2, h4 {
+    color : #fff;
+}
+
+h4 a {
+    color: #fff;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 80%;
+}
+
+.thumbnail {
+    padding: 0;
+    background-color: #e9ecef;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+/*home page */
+.home {
+    width: 30%
+}
+
+/* ================house page ===========================*/
+/*index page*/
+.house-message, .member-message {
+    padding: 0rem 2rem 0.1rem;
+    margin-bottom: 1rem;
+}
+.thumbnail.house-row, .thumbnail.member-row {
+    width: 100%;
+    border-radius: 3px;
+    padding: 0;
+    margin: 0 0 5px 0;
+    background-color: #eff4f9;
+    border: solid 1px #063a6d;
+}
+/*new house*/
+.new-house, .new-member {
+    width: 50%;
+}
+/*show page*/
+.house-members-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100vw;
+/*    max-height: 800px;*/
+}
+.house-member {
+    width: 33.33%;
+}
+.house-member img {
+    transition: .8s opacity;
+}
+.house-members-box:hover img { opacity: 0.6; }
+.house-members-box:hover img:hover { opacity: 1; } 

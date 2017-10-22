@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+<div class="container new-member">
+        <h2>Enter member details</h2>
+        <div>
+            <form method="post" action="/members/<%= member._id %>?_method=put">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" value="<%= member.name %>" name="member[name]">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="image url" value="<%= member.image %>" name="member[image]">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="favorite dialog" value="<%= member.dialog %>" name="member[dialog]">
+                </div>
+                <div class="form-group">
+                    <textarea rows="4" class="form-control" placeholder="Personality description" name="member[description]"><%= member.description %></textarea>
+                </div>
+                <button class="btn btn-lg btn-danger"> Update</button>
+            </form>
+            <h4>
+                <a href="/members">Go Back</a>
+            </h4>
+        </div>
+</div>
+<% include ../partials/footer %>

@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+<div class="container house-details">
+    <header>
+        <div class="jumbotron house-message">
+          <h3 class="display-6">House <%= house.name %></h3>
+          <p class="lead"><%= house.history %></p>
+          <hr class="my-4">
+          <p class="lead">
+            <h4 class="float-right"><a href="/houses">Go to the list</a></h4>
+            <% if(currentUser){ %>
+              <a class="btn btn-warning" href="/houses/<%= house._id %>/edit" role="button">Edit Info</a>
+              <a class="btn btn-primary" href="/houses/<%= house._id %>/associate/members" role="button">Add members</a>
+            <% } %>
+          </p>
+        </div>
+    </header>
+    <div class="house-members-box text-center">
+      <% var len = house.members.length %>
+      <% for(var i = 0; i< len; i++){ %>
+      <% var member = house.members[i] %>
+        <div class="house-member">
+          <div class="thumbnail">
+            <img class="col" src="<%= member.image %>">
+            <div class="caption">
+              <h3 class="house-name"><a href="/members/<%= member._id %>"><%= member.name %></a></h3> <h3 class="col"><em style="float: right"><%= member.motto%></em></h3>
+            </div>
+            <% if(currentUser){ %>
+              <p>
+                <a href="/members/<%= member._id%>/edit"><em>Edit info</em></a>
+              </p>
+            <% } %>
+          </div>
+        </div>
+      <% } %>
+    </div>
+</div>
+<% include ../partials/footer %>

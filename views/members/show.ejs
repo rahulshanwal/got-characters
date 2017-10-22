@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+<div class="container member-details">
+    <header>
+        <div class="jumbotron member-message">
+          <h3 class="display-6"><%= member.name %></h3>
+          <p class="lead"><%= member.description %></p>
+          <hr class="my-4">
+          <p class="lead">
+            <h4 class="float-right"><a href="/members">Go to the list</a></h4>
+            <% if(currentUser){ %>
+              <a class="btn btn-warning" href="/members/<%= member._id %>/edit" role="button">Edit Info</a>
+            <% } %>
+          </p>
+        </div>
+    </header>
+</div>
+<% include ../partials/footer %>

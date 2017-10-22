@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+<div class="container houses">
+    <header>
+        <div class="jumbotron transparent_6 house-message">
+          <h3 class="display-3">WELCOME TO THE HOUSES</h3>
+          <p class="lead">Show your loyalty to the houses. Become a member.</p>
+          <hr class="my-4">
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/houses/new" role="button">Register Your House</a>
+          </p>
+        </div>
+    </header>
+    <% var len = houses.length %>
+    <% for(var i = 0; i< len; i++){ %>
+    <% var house = houses[i] %>
+        <div class="row thumbnail house-row">
+            <div class="col-sm-3">
+                <img class="col" src="<%= house.sigil %>">
+            </div>
+             <div class="col-sm-9">
+                <div class="row">
+                    <h3 class="house-name"><a href="houses/<%= house._id %>"><%= house.name %></a></h3> <h3 class="col"><em style="float: right"><%= house.motto%></em></h3>
+                </div>
+                <div class="row caption">
+                    <%= house.history%>
+                </div>
+                <% if(currentUser){ %>
+                <div class="row">
+                    <a href="/houses/<%= house._id%>/edit"><em>Edit info</em></a>
+                </div>
+                <% } %>
+             </div>
+        </div>
+    <% } %>
+</div>
+
+
+<% include ../partials/footer %>
